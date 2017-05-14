@@ -543,7 +543,7 @@ class InformationObjectEditAction extends DefaultEditAction
         $this->resource->relationsRelatedBysubjectId[] = $relation;
       }
 
-      if ('sfIsadPlugin' != $this->request->module)
+      if ('sfIsadPlugin' != $this->request->module) //canelhas - entender o que acontece nesse código
       {
         foreach ($sourceInformationObject->eventsRelatedByobjectId as $sourceEvent)
         {

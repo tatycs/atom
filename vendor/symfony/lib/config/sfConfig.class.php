@@ -56,7 +56,8 @@ class sfConfig
    */
   public static function set($name, $value)
   {
-    self::$config[$name] = $value;
+
+      self::$config[$name] = $value;
   }
 
   /**

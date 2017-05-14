@@ -26,7 +26,7 @@
  */
 class SettingsDefaultTemplateForm extends sfForm
 {
-  public function configure()
+  public function configure() //canelhas - nobrade added
   {
     $i18n = sfContext::getInstance()->i18n;
 
@@ -35,9 +35,13 @@ class SettingsDefaultTemplateForm extends sfForm
 
     $informationObjectTemplates = array();
 
-    if ($configuration->isPluginEnabled('sfIsadPlugin'))
+    if ($configuration->isPluginEnabled('sfIsadPlugin')) {
+        $informationObjectTemplates['isad'] = $i18n->__('ISAD(G), 2nd ed. International Council on Archives');
+    }
+    //canelhas - nobrade added
+    if ($configuration->isPluginEnabled('sfNobradePlugin'))
     {
-      $informationObjectTemplates['isad'] = $i18n->__('ISAD(G), 2nd ed. International Council on Archives');
+      $informationObjectTemplates['nobrade'] = $i18n->__('NOBRADE, Conselho Nacional de Arquivos');
     }
     if ($configuration->isPluginEnabled('sfDcPlugin'))
     {

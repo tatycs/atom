@@ -64,6 +64,17 @@ class InformationObjectNotesComponent extends sfComponent
 
           break;
 
+        //canelhas - nobrade added
+        case 'nobradePublicationNotes':
+          $this->hiddenType = true;
+          $this->hiddenTypeId = QubitTerm::PUBLICATION_NOTE_ID;
+          $this->allNotes = $this->resource->getNotesByType(array('noteTypeId' => $this->hiddenTypeId));
+          $this->tableName = $this->context->i18n->__('Publication notes');
+          $this->arrayName = 'nobradePublicationNotes';
+          $this->help = $this->context->i18n->__('Record a citation to, and/or information about a publication that is about or based on the use, study, or analysis of the unit of description. Include references to published facsimiles or transcriptions. (ISAD 3.5.4)');
+
+           break;
+
         case 'dacsPublicationNotes':
           $this->hiddenType = true;
           $this->hiddenTypeId = QubitTerm::PUBLICATION_NOTE_ID;
@@ -94,6 +105,17 @@ class InformationObjectNotesComponent extends sfComponent
 
           break;
 
+        //canelhas - nobrade added
+        case 'nobradeNotes':
+          $this->hiddenType = true;
+          $this->hiddenTypeId = QubitTerm::GENERAL_NOTE_ID;
+          $this->allNotes = $this->resource->getNotesByType(array('noteTypeId' => $this->hiddenTypeId));
+          $this->tableName = $this->context->i18n->__('Notes');
+          $this->arrayName = 'nobradeNotes';
+          $this->help = $this->context->i18n->__('Record specialized or other important information not accommodated by any of the defined elements of description. (ISAD 3.6.1)');
+
+          break;
+
         case 'dacsNotes':
           $this->hiddenType = true;
           $this->hiddenTypeId = QubitTerm::GENERAL_NOTE_ID;
@@ -113,6 +135,17 @@ class InformationObjectNotesComponent extends sfComponent
           $this->help = $this->context->i18n->__('Select a note type from the drop-down menu and record, as needed, specialized information not accommodated by any of the defined elements of description, including Conservation (DACS 7.1.3), Citation (DACS 7.1.5), Alphanumeric designations (DACS 7.1.6), Variant title information (DACS 7.1.7), or Processing information (DACS 7.1.8).');
 
           $this->addField('type');
+
+          break;
+
+        //canelhas - nobrade added
+        case 'nobradeArchivistsNotes':
+          $this->hiddenType = true;
+          $this->hiddenTypeId = QubitTerm::ARCHIVIST_NOTE_ID;
+          $this->allNotes = $this->resource->getNotesByType(array('noteTypeId' => $this->hiddenTypeId));
+          $this->tableName = $this->context->i18n->__('Archivist\'s notes');
+          $this->arrayName = 'nobradeArchivistsNotes';
+          $this->help = $this->context->i18n->__('Record notes on sources consulted in preparing the description and who prepared it. (ISAD 3.7.1)');
 
           break;
 

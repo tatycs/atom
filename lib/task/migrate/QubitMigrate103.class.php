@@ -774,7 +774,7 @@ class QubitMigrate103 extends QubitMigrate
   protected function sortQubitTerms()
   {
     $qubitTermConstantIds = array(
-    //EventType taxonomy
+    //EventType taxonomy //canelhas - adicionar diferentes datas da nobrade aqui
       'CREATION_ID',
       'SUBJECT_ID',
       'CUSTODY_ID',

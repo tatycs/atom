@@ -91,12 +91,14 @@ class sfPluginAdminPluginPluginsAction extends sfAction
           else if (false !== $key = array_search($item, $settings))
           {
             // Don't disable default plugins
+            //canelhas - nobrade added
             if (!($item == 'sfIsdiahPlugin'
                 || $item == 'sfIsaarPlugin'
                 || ($item == 'sfIsadPlugin' && $this->defaultTemplate =='isad')
                 || ($item == 'sfRadPlugin' && $this->defaultTemplate == 'rad')
                 || ($item == 'sfDcPlugin' && $this->defaultTemplate == 'dc')
-                || ($item == 'sfModsPlugin' && $this->defaultTemplate == 'mods')))
+                || ($item == 'sfModsPlugin' && $this->defaultTemplate == 'mods')
+                || ($item == 'sfNobradePlugin' && $this->defaultTemplate == 'nobrade')))
             {
               unset($settings[$key]);
             }

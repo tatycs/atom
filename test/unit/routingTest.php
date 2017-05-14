@@ -198,7 +198,8 @@ $t->is($info['action'], 'bar');
 # QubitMetadataResource
 #
 
-$ioTemplates = array('dc' => 'sfDcPlugin', 'isad' => 'sfIsadPlugin', 'mods' => 'sfModsPlugin', 'rad' => 'sfRadPlugin', 'dacs' => 'arDacsPlugin');
+#canelhas - nobrade added
+$ioTemplates = array('dc' => 'sfDcPlugin', 'isad' => 'sfIsadPlugin', 'mods' => 'sfModsPlugin', 'rad' => 'sfRadPlugin', 'dacs' => 'arDacsPlugin', 'nobrade' => 'sfNobradePlugin');
 
 $defaultIoTemplateCode = sfConfig::get('app_default_template_informationobject');
 $defaultIoTemplateModule = $ioTemplates[$defaultIoTemplateCode];

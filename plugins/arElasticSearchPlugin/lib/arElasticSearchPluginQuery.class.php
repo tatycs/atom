@@ -318,9 +318,11 @@ class arElasticSearchPluginQuery
         ProjectConfiguration::getActive()->loadHelpers(array('Asset', 'Qubit'));
 
         // Check archival history visibility
+        //canelhas - nobrade added
         if (($archivalStandard == 'rad' && check_field_visibility('app_element_visibility_rad_archival_history'))
           || ($archivalStandard == 'isad' && check_field_visibility('app_element_visibility_isad_archival_history'))
-          || ($archivalStandard != 'isad' && $archivalStandard != 'rad'))
+          || ($archivalStandard == 'nobrade' && check_field_visibility('app_element_visibility_nobrade_archival_history'))
+          || ($archivalStandard != 'isad' && $archivalStandard != 'rad'  && $archivalStandard != 'nobrade'))
         {
           $queryField = new \Elastica\Query\QueryString($query);
           $queryField->setFields(arElasticSearchPluginUtil::getI18nFieldNames('i18n.%s.archivalHistory'));

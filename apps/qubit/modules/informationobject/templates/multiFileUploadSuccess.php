@@ -45,7 +45,7 @@
         <ul>
           <li><?php echo link_to(__('Cancel'), array($resource, 'module' => 'informationobject')) ?></li>
         </ul>
-      </sectin>
+      </section>
     </div>
 
   <?php else: ?>

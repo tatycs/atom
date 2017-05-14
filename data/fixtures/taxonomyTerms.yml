@@ -8478,6 +8478,41 @@ QubitTerm:
       sr: 'ISAD(G) – Општи међународни стандард за опис архивске грађе, 2. изд. Међународни савет архива'
       vi: 'ISAD(G), 2nd ed. International Council on Archives'
       zh: 'ISAD(G), 第二版. 国际档案理事会'
+
+  #canelhas - nobrade added
+  QubitTerm_template_isad:
+    taxonomy_id: 70
+    parent_id: QubitTerm_110
+    source_culture: en
+    code: nobrade
+    name:
+        ca: 'NOBRADE, Conselho Nacional de Arquivos'
+        ca@valencia: 'NOBRADE, Conselho Nacional de Arquivos'
+        cy: 'NOBRADE, Conselho Nacional de Arquivos'
+        de: 'NOBRADE, Conselho Nacional de Arquivos'
+        de-CH: 'NOBRADE, Conselho Nacional de Arquivos'
+        el: 'NOBRADE, Conselho Nacional de Arquivos'
+        en: 'NOBRADE, Conselho Nacional de Arquivos'
+        es: 'NOBRADE, Conselho Nacional de Arquivos'
+        eu: 'NOBRADE, Conselho Nacional de Arquivos'
+        fr: 'NOBRADE, Conselho Nacional de Arquivos'
+        gl: 'NOBRADE, Conselho Nacional de Arquivos'
+        hr: 'NOBRADE, Conselho Nacional de Arquivos'
+        hu: 'NOBRADE, Conselho Nacional de Arquivos'
+        is: 'NOBRADE, Conselho Nacional de Arquivos'
+        it: 'NOBRADE, Conselho Nacional de Arquivos'
+        ka: 'NOBRADE, Conselho Nacional de Arquivos'
+        ko: 'NOBRADE, Conselho Nacional de Arquivos'
+        pl: 'NOBRADE, Conselho Nacional de Arquivos'
+        pt: 'NOBRADE, Conselho Nacional de Arquivos'
+        pt-BR: 'NOBRADE, Conselho Nacional de Arquivos'
+        pt_BR: 'NOBRADE, Conselho Nacional de Arquivos'
+        sl: 'NOBRADE, Conselho Nacional de Arquivos'
+        sr: 'NOBRADE, Conselho Nacional de Arquivos'
+        vi: 'NOBRADE, Conselho Nacional de Arquivos'
+        zh: 'NOBRADE, Conselho Nacional de Arquivos'
+
+
   QubitTerm_template_dc:
     taxonomy_id: 70
     parent_id: QubitTerm_110

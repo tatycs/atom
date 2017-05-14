@@ -50,6 +50,14 @@ class arMigration0104
     $setting->culture = 'en';
     $setting->save();
 
+    //canelhas - nobrade added
+    $setting = new QubitSetting;
+    $setting->name  = 'nobrade_archival_history';
+    $setting->scope = 'element_visibility';
+    $setting->value = 1;
+    $setting->culture = 'en';
+    $setting->save();
+
     return true;
   }
 }

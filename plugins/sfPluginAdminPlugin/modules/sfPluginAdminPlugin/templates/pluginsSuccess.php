@@ -34,12 +34,15 @@
                           || !$form->isBound() && in_array($name, $form->getDefault('enabled'))): ?>
                 checked="checked"
               <?php endif; ?>
+
               <?php if ($name == 'sfIsdiahPlugin'
                         || $name == 'sfIsaarPlugin'
                         || ($name == 'sfIsadPlugin' && $defaultTemplate =='isad')
                         || ($name == 'sfRadPlugin' && $defaultTemplate == 'rad')
                         || ($name == 'sfDcPlugin' && $defaultTemplate == 'dc')
-                        || ($name == 'sfModsPlugin' && $defaultTemplate == 'mods')): ?>
+                        || ($name == 'sfModsPlugin' && $defaultTemplate == 'mods')
+                          //canelhas - nobrade added
+                        || ($name == 'sfNobradePlugin' && $defaultTemplate == 'nobrade')): ?>
                 disabled="disabled"
               <?php endif; ?>
               name="enabled[]" type="checkbox" value="<?php echo $name ?>"

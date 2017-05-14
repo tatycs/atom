@@ -464,13 +464,15 @@ class QubitMigrate109 extends QubitMigrate
    */
   protected function guessSourceStandard()
   {
+    //canelhas - nobrade added
     $standards = array(
       'dc' => 'Dublin Core Simple version 1.1',
       'isad' => 'ISAD(G) 2nd edition',
       'isaar' => 'ISAAR(CPF) 2nd edition',
       'isdiah' => 'ICA-ISDIAH 1st edition',
       'mods' => 'MODS version 3.3',
-      'rad' => 'RAD version Jul2008'
+      'rad' => 'RAD version Jul2008',
+      'nobrade' => 'NOBRADE versão 1'
     );
 
     foreach ($this->data['QubitSetting'] as $key => $row)

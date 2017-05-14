@@ -21,6 +21,7 @@ class QubitMetadataRoute extends sfRoute
 {
   public static
 
+  //canelhas - nobrade added
     $METADATA_PLUGINS = array(
       'isaar' => 'sfIsaarPlugin',
       'eac'   => 'sfEacPlugin',
@@ -31,7 +32,8 @@ class QubitMetadataRoute extends sfRoute
       'rad'   => 'sfRadPlugin',
       'mods'  => 'sfModsPlugin',
       'dacs'  => 'arDacsPlugin',
-      'isdf'  => 'sfIsdfPlugin'),
+      'isdf'  => 'sfIsdfPlugin',
+      'nobrade' => 'sfNobradePlugin'),
 
     $DEFAULT_MODULES = array(
       'informationobject' => false,
@@ -159,7 +161,8 @@ class QubitMetadataRoute extends sfRoute
             $default = $defaultSetting;
           }
 
-          $parameters['module'] = $this->getActionParameter(array('isad', 'dc', 'mods', 'rad', 'ead', 'dacs'), $default, $parameters);
+          //canelhas - nobrade added
+          $parameters['module'] = $this->getActionParameter(array('isad', 'dc', 'mods', 'rad', 'ead', 'dacs', 'nobrade'), $default, $parameters);
 
           break;
 

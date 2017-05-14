@@ -437,6 +437,8 @@ class sfInstall
 
     $object = new QubitSetting;
     $object->name = 'plugins';
+
+    //canelhas - nobrade added
     $object->value = serialize(array(
       'sfDcPlugin',
       'arDominionPlugin',
@@ -449,7 +451,8 @@ class sfInstall
       'sfIsdiahPlugin',
       'sfModsPlugin',
       'sfRadPlugin',
-      'sfSkosPlugin'));
+      'sfSkosPlugin',
+      'sfNobradePlugin'));
     $object->save();
 
     $dispatcher = sfContext::getInstance()->getEventDispatcher();
