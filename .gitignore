@@ -24,3 +24,6 @@
 
 # Transifex files
 .tx/i18n
+
+# canelhas: PhpStorm files
+.idea/
