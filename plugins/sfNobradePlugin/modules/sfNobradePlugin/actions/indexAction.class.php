@@ -50,9 +50,9 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
     // Set creator history label
     $this->creatorHistoryLabels = array(
       NULL => $this->context->i18n->__('Administrative / Biographical history'),
-      QubitTerm::CORPORATE_BODY_ID => $this->context->i18n->__('Administrative history'),
-      QubitTerm::PERSON_ID => $this->context->i18n->__('Biographical history'),
-      QubitTerm::FAMILY_ID => $this->context->i18n->__('Biographical history')
+      QubitTerm::CORPORATE_BODY_ID => $this->context->i18n->__('Administrative History'),
+      QubitTerm::PERSON_ID => $this->context->i18n->__('Biographical History'),
+      QubitTerm::FAMILY_ID => $this->context->i18n->__('Biographical History')
     );
 
     if (QubitAcl::check($this->resource, 'update'))
@@ -84,7 +84,7 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
 
       $validatorSchema->extentAndMedium = new sfValidatorString(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Extent and medium%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.5">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Extent and Medium%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.5">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
       $values['extentAndMedium'] = $this->resource->getExtentAndMedium(array('cultureFallback' => true));
 
       $validatorSchema->identifier = new sfValidatorString(array(

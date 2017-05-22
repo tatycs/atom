@@ -1,4 +1,4 @@
-<h1><?php echo __('File list') ?></h1>
+<h1><?php echo __('File List') ?></h1>
 
 <?php echo get_partial('default/breadcrumb', array('objects' => $resource->ancestors->andSelf())) ?>
 
@@ -12,7 +12,7 @@
       </th><th>
         <?php echo __('Date(s)') ?>
       </th><th>
-        <?php echo __('Conditions governing access') ?>
+        <?php echo __('Conditions Governing Access') ?>
       </th>
     </tr>
   </thead><tbody>

@@ -10,7 +10,7 @@
       </trans-unit>
       <trans-unit id="6">
         <source>Save translation</source>
-        <target>Guardar tradução</target>
+        <target>Salvar a tradução</target>
       </trans-unit>
       <trans-unit id="7">
         <source>Translate user interface</source>

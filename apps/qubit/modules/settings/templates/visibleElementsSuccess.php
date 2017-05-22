@@ -74,14 +74,14 @@
             <legend><?php echo __('NOBRADE template - area headings') ?></legend>
 
             <?php foreach (array(
-                               'nobrade_identity_area' => __('Identity area'),
-                               'nobrade_context_area' => __('Context area'),
-                               'nobrade_content_and_structure_area' => __('Content and structure area'),
-                               'nobrade_conditions_of_access_use_area' => __('Conditions of access and use area'),
-                               'nobrade_allied_materials_area' => __('Allied materials area'),
-                               'nobrade_notes_area' => __('Notes area'),
-                               'nobrade_access_points_area' => __('Access points'),
-                               'nobrade_description_control_area' => __('Description control area')) as $key => $value): ?>
+                               'nobrade_identity_area' => __('Identity Area'),
+                               'nobrade_context_area' => __('Context Area'),
+                               'nobrade_content_and_structure_area' => __('Content and Structure Area'),
+                               'nobrade_conditions_of_access_use_area' => __('Conditions of Access and Use Area'),
+                               'nobrade_allied_materials_area' => __('Allied Materials Area'),
+                               'nobrade_notes_area' => __('Notes Area'),
+                               'nobrade_access_points_area' => __('Access Points Area'),
+                               'nobrade_description_control_area' => __('Description Control Area')) as $key => $value): ?>
 
                 <div class="form-item form-item-checkbox">
                     <?php echo $form[$key] ?>
@@ -99,21 +99,21 @@
             <legend><?php echo __('NOBRADE template - elements') ?></legend>
 
             <?php foreach (array(
-                               'nobrade_archival_history' => __('Archival history'),
-                               'nobrade_immediate_source' => __('Immediate source of acquisition or transfer'),
-                               'nobrade_appraisal_destruction' => __('Appraisal, destruction and scheduling information'),
-                               'nobrade_notes' => __('Notes'),
-                               'nobrade_physical_condition' => __('Physical characteristics and technical requirements'),
-                               'nobrade_control_description_identifier' => __('Description identifier'),
-                               'nobrade_control_institution_identifier' => __('Institution identifier'),
-                               'nobrade_control_rules_conventions' => __('Rules or conventions'),
+                               'nobrade_archival_history' => __('Archival History'),
+                               'nobrade_immediate_source' => __('Immediate Source of Acquisition or Transfer'),
+                               'nobrade_appraisal_destruction' => __('Appraisal, Destruction and Scheduling Information'),
+                               'nobrade_notes' => __(' General Notes'),
+                               'nobrade_physical_condition' => __('Physical Characteristics and Technical Requirements'),
+                               'nobrade_control_description_identifier' => __('Description Identifier'),
+                               'nobrade_control_institution_identifier' => __('Institution Identifier'),
+                               'nobrade_control_rules_conventions' => __('Rules or Conventions'),
                                'nobrade_control_status' => __('Status'),
-                               'nobrade_control_level_of_detail' => __('Level of detail'),
-                               'nobrade_control_dates' => __('Dates of creation, revision and deletion'),
+                               'nobrade_control_level_of_detail' => __('Level of Detail'),
+                               'nobrade_control_dates' => __('Dates of Creation, Revision and Deletion'),
                                'nobrade_control_languages' => __('Language(s)'),
                                'nobrade_control_scripts' => __('Script(s)'),
                                'nobrade_control_sources' => __('Sources'),
-                               'nobrade_control_archivists_notes' => __('Archivist\'s notes')) as $key => $value): ?>
+                               'nobrade_control_archivists_notes' => __('Archivist\'s Notes')) as $key => $value): ?>
 
                 <div class="form-item form-item-checkbox">
                     <?php echo $form[$key] ?>

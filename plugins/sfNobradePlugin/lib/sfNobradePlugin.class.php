@@ -151,7 +151,7 @@ class sfNobradePlugin implements ArrayAccess
     return call_user_func_array(array($this, '__unset'), $args);
   }
 
-  public static function eventTypes()
+  public static function eventTypes() //canelhas - acrescentar diferentes datas aqui
   {
     return array(QubitTerm::getById(QubitTerm::CREATION_ID),
       QubitTerm::getById(QubitTerm::ACCUMULATION_ID));

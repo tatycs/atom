@@ -1,6 +1,6 @@
 <fieldset class="collapsible collapsed" id="adminInfoArea">
 
-  <legend><?php echo __('Administration area') ?></legend>
+  <legend><?php echo __('Administration Area') ?></legend>
 
   <div class="row">
 

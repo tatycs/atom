@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file datatype="plaintext" date="2016-12-21T12:10:03Z" original="messages" product-name="messages" source-language="en" target-language="pt-BR">
+  <file datatype="plaintext" date="2017-05-21T19:31:51Z" original="messages" product-name="messages" source-language="en" target-language="pt-BR">
     <header/>
     <body>
       <trans-unit id="a5162e31ab7277f79bebcb03364debdf5c0913b8">
@@ -280,7 +280,7 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/term/templates/indexSuccess.php</note>
       </trans-unit>
       <trans-unit id="52f2abc31facf3d1aa0272cd240dad9fb4b3924e">
-        <source>Add new child levels</source>
+        <source>Add New Child Levels</source>
         <target>Adicionar novos n&#xED;veis subordinados</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_childLevels.php</note>
       </trans-unit>
@@ -360,8 +360,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/contactinformation/templates/_contactInformation.php</note>
       </trans-unit>
       <trans-unit id="3133cd5a6e2c349a5bd78fc5f2136aca46c749d8">
-        <source>Administration area</source>
-        <target>&#xC1;rea de administra&#xE7;&#xE3;o</target>
+        <source>Administration Area</source>
+        <target>&#xC1;rea de Administra&#xE7;&#xE3;o</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_adminInfo.php</note>
       </trans-unit>
       <trans-unit id="af4d14fa8e03c293207d7c9553e870c93b6037dd">
@@ -515,8 +515,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="daa72ca0a8406bd4455723d9050fd4ca728253aa">
-        <source>Archival history</source>
-        <target>Hist&#xF3;ria do arquivo</target>
+        <source>Archival History</source>
+        <target>Hist&#xF3;ria Arquiv&#xED;stica</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="add9915f36921cbb6871cf73f5ec4a26974d2340">
@@ -536,7 +536,7 @@
       </trans-unit>
       <trans-unit id="de4b71be156bfc26c1358b02a47093e0849482ce">
         <source>Archivist's notes</source>
-        <target>Notas dos arquivistas</target>
+        <target>Notas dos Arquivistas</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="15be3b0bf4aa42ef4f2df60db29574760850b7fc">
@@ -955,8 +955,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/dipUploadSuccess.php</note>
       </trans-unit>
       <trans-unit id="eb9a4bc1c0c153e4e4b042a79113b815b7e3021d">
-        <source>Date</source>
-        <target>Data</target>
+        <source>Child Date</source>
+        <target>Data do Subordinado</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/user/templates/clipboardSuccess.php</note>
       </trans-unit>
       <trans-unit id="14741faac7891439054e60649ebcaf1aa4631034">
@@ -1686,7 +1686,7 @@
       </trans-unit>
       <trans-unit id="06b6ace8ca3f18249e8ba4ea9090c0f34564ce1c">
         <source>Identifier</source>
-        <target>Identificador</target>
+        <target>C&#xF3;digo de refer&#xEA;ncia</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/function/templates/browseSuccess.php</note>
       </trans-unit>
       <trans-unit id="20d9c9c5fffabec39cefaf8e72e140a7cf144cba">
@@ -1875,13 +1875,13 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_adminInfo.php</note>
       </trans-unit>
       <trans-unit id="7c7f5d049fad2569721d446c4a811f9bd5da5393">
-        <source>Level</source>
-        <target>N&#xED;vel</target>
+        <source>Child Level</source>
+        <target>N&#xED;vel do Subordinado</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_childLevels.php</note>
       </trans-unit>
       <trans-unit id="8378bfd4ba4a8ae83ce8f2bbcfda8163ef44e076">
-        <source>Level of description</source>
-        <target>N&#xED;vel de descri&#xE7;&#xE3;o</target>
+        <source>Child Level of Description</source>
+        <target>N&#xED;vel de descri&#xE7;&#xE3;o do Subordinado</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="8fa54be88d46f9d52c82b30c54d96d9ec16ebe3c">
@@ -2616,7 +2616,7 @@
       </trans-unit>
       <trans-unit id="c40d1f40659c35c988027dc0259054315335b03c">
         <source>Publication notes</source>
-        <target>Notas de publica&#xE7;&#xE3;o</target>
+        <target>Notas de Publica&#xE7;&#xE3;o</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/actions/notesComponent.class.php</note>
       </trans-unit>
       <trans-unit id="084ea620d93fcf80f10d7a8277a855e3957bda61">
@@ -2715,8 +2715,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/actions/notesComponent.class.php</note>
       </trans-unit>
       <trans-unit id="b2acd6af73c4ceb26f6c5c2b296adafd8ee013d6">
-        <source>Reference code</source>
-        <target>C&#xF3;digo de refer&#xEA;ncia</target>
+        <source>Child Reference Code</source>
+        <target>C&#xF3;digo de Refer&#xEA;ncia do Subordinado</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="1b71aaeef4ba63eac38b64a29f4f2838bbdee13b">
@@ -2826,7 +2826,7 @@
       </trans-unit>
       <trans-unit id="312386841084261c610413fa4de8b7505f469407">
         <source>Repository</source>
-        <target>Entidade custodiadora</target>
+        <target>Entidade Custodiadora</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="9e3bf8a65c8d74ebd89e045fc671289473cecba0">
@@ -2985,8 +2985,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/term/templates/editSuccess.php</note>
       </trans-unit>
       <trans-unit id="ea2e6e20f4f7538609fcd6718e80dbb14019b0e1">
-        <source>Scope and content</source>
-        <target>&#xC2;mbito e conte&#xFA;do</target>
+        <source>Scope and Content</source>
+        <target>&#xC2;mbito e Conte&#xFA;do</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="2fb66c4d30b5f337a2ca3b2257642a8e20ef1dc7">
@@ -3006,7 +3006,7 @@
       </trans-unit>
       <trans-unit id="1543708613e125e019a3d514e7e0705a1500ac5d">
         <source>Script(s)</source>
-        <target>Sistema(s) de escrita(s)</target>
+        <target>Sistema(s) de Escrita(s)</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="bce06414177f72ab70e6387b6af9f8ceef0d6049">
@@ -3650,8 +3650,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/itemListSuccess.php</note>
       </trans-unit>
       <trans-unit id="768e0c1c69573fb588f61f1308a015c11468e05f">
-        <source>Title</source>
-        <target>T&#xED;tulo</target>
+        <source>Child Title</source>
+        <target>T&#xED;tulo do Subordinado</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/staticpage/templates/listSuccess.php</note>
       </trans-unit>
       <trans-unit id="6be3badbbba74654b102c5a1056bacdf926b8570">

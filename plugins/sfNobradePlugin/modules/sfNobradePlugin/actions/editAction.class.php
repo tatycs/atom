@@ -75,7 +75,7 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
 
     $this->nobrade = new sfNobradePlugin($this->resource);
 
-    $title = $this->context->i18n->__('Add new archival description');
+    $title = $this->context->i18n->__('Add New Archival Description');
     if (isset($this->getRoute()->resource))
     {
       if (1 > strlen($title = $this->resource->__toString()))
@@ -202,7 +202,7 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
 
   protected function processForm()
   {
-    $this->resource->sourceStandard = 'NOBRADE';
+    $this->resource->sourceStandard = 'NOBRADE, Arquivo Nacional, 2006';
 
     $this->alternativeIdentifiersComponent->processForm();
 
