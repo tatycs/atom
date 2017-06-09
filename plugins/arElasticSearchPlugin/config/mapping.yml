@@ -393,6 +393,7 @@ mapping:
       physical_objects: physical_object
       title_statement_of_responsibility: property
       general_notes: note
+      preservation_notes: note #canelhas - teste de busca nesse campo - NOBRADE 6.2
       alpha_numeric_notes: note
       conservation_notes: note
       physical_description_notes: note

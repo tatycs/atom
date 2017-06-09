@@ -20,7 +20,7 @@
 class sfNobradePluginConfiguration extends sfPluginConfiguration
 {
   public static
-    $summary = 'Metadata standard plugin.  Enables data-entry and display using Brazilian Standard Description (NOBRADE).',
+    $summary = 'Metadata standard plugin.  Enables data-entry and display using Brazilian Standard Archival Description (NOBRADE).',
     $version = '1.0.0';
 
   /**
@@ -30,7 +30,6 @@ class sfNobradePluginConfiguration extends sfPluginConfiguration
   {
     $enabledModules = sfConfig::get('sf_enabled_modules');
     $enabledModules[] = 'sfNobradePlugin';
-    //canelhas - error_log(print_r($enabledModules,true));
     sfConfig::set('sf_enabled_modules', $enabledModules);
   }
 }

@@ -64,7 +64,7 @@ class InformationObjectNotesComponent extends sfComponent
 
           break;
 
-        //canelhas - nobrade added
+        //canelhas - NOBRADE 5.4
         case 'nobradePublicationNotes':
           $this->hiddenType = true;
           $this->hiddenTypeId = QubitTerm::PUBLICATION_NOTE_ID;
@@ -105,7 +105,7 @@ class InformationObjectNotesComponent extends sfComponent
 
           break;
 
-        //canelhas - nobrade added
+        //canelhas - NOBRADE 6.2
         case 'nobradeNotes':
           $this->hiddenType = true;
           $this->hiddenTypeId = QubitTerm::GENERAL_NOTE_ID;
@@ -138,7 +138,7 @@ class InformationObjectNotesComponent extends sfComponent
 
           break;
 
-        //canelhas - nobrade added
+        //canelhas - NOBRADE 7.1
         case 'nobradeArchivistsNotes':
           $this->hiddenType = true;
           $this->hiddenTypeId = QubitTerm::ARCHIVIST_NOTE_ID;
@@ -166,6 +166,17 @@ class InformationObjectNotesComponent extends sfComponent
           $this->tableName = $this->context->i18n->__('Archivist and date');
           $this->arrayName = 'dacsArchivistsNotes';
           $this->help = $this->context->i18n->__('Record the name(s) of the person(s) who created or revised the description, as well as the creation or revision date. (DACS 8.1.5)');
+
+          break;
+
+        //NOBRADE 6.1
+        case 'nobradePreservationNotes':
+          $this->hiddenType = true;
+          $this->hiddenTypeId = QubitTerm::PRESERVATION_NOTE_ID;
+          $this->allNotes = $this->resource->getNotesByType(array('noteTypeId' => $this->hiddenTypeId));
+          $this->tableName = $this->context->i18n->__('Preservation Note');
+          $this->arrayName = 'nobradePreservationNotes';
+          $this->help = $this->context->i18n->__('Record information on the conservation status of the unit of description as well as conservation and/or restoration measures that have been, are being or should be taken in relation to it. (NOBRADE 6.1)');
 
           break;
       }

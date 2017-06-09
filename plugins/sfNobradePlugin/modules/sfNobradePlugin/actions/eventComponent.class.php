@@ -41,7 +41,7 @@ class sfNobradePluginEventComponent extends InformationObjectEventComponent
         {
            $eventTypes = sfIsadPlugin::eventTypes();
         }
-        else //canelhas - nobrade added
+        else //NOBRADE'S EVENT TYPES
         {
           $eventTypes = sfNobradePlugin::eventTypes();
         }

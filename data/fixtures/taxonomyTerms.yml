@@ -1201,7 +1201,7 @@ QubitTaxonomy:
       ko: '정보 객체 템플릿'
       pt: 'Modelos de objetos de informação'
       pt-BR: 'Modelos de descrição arquivística'
-      pt_BR: 'Modelos de objetos de informação'
+      pt_BR: 'Normas de descrição arquivística'
       sl: 'Predloge za informacijski objekt'
       sr: 'Шаблони за информационе објекте'
       sv: 'Mallar för informationsobjekt'
@@ -2529,6 +2529,41 @@ QubitTerm:
       th: หมายเหตุทั่วไป
       vi: 'General note'
       zh: 一般说明
+  QubitTerm_182:
+      taxonomy_id: QubitTaxonomy_7
+      parent_id: QubitTerm_110
+      id: 439
+      source_culture: en
+      name:
+        ca: 'Preservation Note'
+        ca@valencia: 'Preservation Note'
+        cy: 'Preservation Note'
+        de: 'Preservation Note'
+        de-CH: 'Preservation Note'
+        el: 'Preservation Note'
+        en: 'Preservation Note'
+        es: 'Preservation Note'
+        eu: 'Preservation Note'
+        fr: 'Preservation Note'
+        gl: 'Preservation Note'
+        hu: 'Preservation Note'
+        id: 'Preservation Note'
+        is: 'Preservation Note'
+        it: 'Preservation Note'
+        ja: 'Preservation Note'
+        ka: 'Preservation Note'
+        ko: 'Preservation Note'
+        nl: 'Preservation Note'
+        pl: 'Preservation Note'
+        pt: 'Nota de conservação'
+        pt-BR: 'Nota de conservação'
+        pt_BR: 'Nota de publicação'
+        sl: 'Preservation Note'
+        sr: 'Preservation Note'
+        sv: 'Preservation Note'
+        th: 'Preservation Note'
+        vi: 'Preservation Note'
+        zh: 'Preservation Note'
   QubitTerm_parallel_form_of_name:
     taxonomy_id: QubitTaxonomy_6
     parent_id: QubitTerm_110

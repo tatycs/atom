@@ -40,6 +40,11 @@ class QubitTerm extends BaseTerm
     CONTRIBUTION_ID = 115,
     COLLECTION_ID = 117,
     ACCUMULATION_ID = 118,
+    //NOBRADE'S event type taxonomy
+    SUBJECT_DATE_ID = 440,
+    CHRONIC_DATE_ID = 441,
+    INCLUSIVE_DATE_ID = 442,
+    TOPIC_DATE_ID = 443,
 
     // Note type taxonomy
     TITLE_NOTE_ID = 119,
@@ -51,6 +56,7 @@ class QubitTerm extends BaseTerm
     GENERAL_NOTE_ID = 125,
     OTHER_DESCRIPTIVE_DATA_ID = 126,
     MAINTENANCE_NOTE_ID = 127,
+    PRESERVATION_NOTE_ID = 439,  //NOBRADE 6.1
 
     // Collection type taxonomy
     ARCHIVAL_MATERIAL_ID = 128,

@@ -68,7 +68,7 @@
 
         <?php endforeach; ?>
 
-      <?php /* canelhas - nobrade added*/ ?>
+      <?php /* canelhas - nobrade's areas added*/ ?>
       </fieldset>
         <fieldset class="collapsible collapsed">
             <legend><?php echo __('NOBRADE template - area headings') ?></legend>
@@ -94,6 +94,7 @@
 
         </fieldset>
 
+        <?php /* canelhas - nobrade's elements added*/ ?>
         <fieldset class="collapsible collapsed">
 
             <legend><?php echo __('NOBRADE template - elements') ?></legend>
@@ -103,6 +104,7 @@
                                'nobrade_immediate_source' => __('Immediate Source of Acquisition or Transfer'),
                                'nobrade_appraisal_destruction' => __('Appraisal, Destruction and Scheduling Information'),
                                'nobrade_notes' => __(' General Notes'),
+                               'nobrade_preservation_notes' => __('Preservation Notes'),
                                'nobrade_physical_condition' => __('Physical Characteristics and Technical Requirements'),
                                'nobrade_control_description_identifier' => __('Description Identifier'),
                                'nobrade_control_institution_identifier' => __('Institution Identifier'),

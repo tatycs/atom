@@ -18,12 +18,13 @@
  */
 
 /**
- * Information Object - editIsad
+ * Information Object - editNobrade
  *
  * @package    AccesstoMemory
  * @subpackage informationObject - initialize an editIsad template for updating an information object
  * @author     Peter Van Garderen <peter@artefactual.com>
  * @author     Jesús García Crespo <correo@sevein.com>
+ * @author     Tatiana Canelhas <tatycs@gmail.com>
  */
 class sfNobradePluginEditAction extends InformationObjectEditAction
 {
@@ -78,7 +79,7 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
     $title = $this->context->i18n->__('Add New Archival Description');
     if (isset($this->getRoute()->resource))
     {
-      if (1 > strlen($title = $this->resource->__toString()))
+      if (1 > strlen($title = $this->resource->__toString())) //STRLEN'S TITLE LESS THEN 1 = UNTITLE
       {
         $title = $this->context->i18n->__('Untitled');
       }
@@ -107,6 +108,11 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
     $this->archivistsNotesComponent = new InformationObjectNotesComponent($this->context, 'informationobject', 'notes');
     $this->archivistsNotesComponent->resource = $this->resource;
     $this->archivistsNotesComponent->execute($this->request, $options = array('type' => 'nobradeArchivistsNotes'));
+
+    //canelhas - NOBRADE 6.2
+    $this->preservationNotesComponent = new InformationObjectNotesComponent($this->context, 'informationobject', 'notes');
+    $this->preservationNotesComponent->resource = $this->resource;
+    $this->preservationNotesComponent->execute($this->request, $options = array('type' => 'nobradePreservationNotes'));
   }
 
   protected function addField($name)
@@ -214,17 +220,19 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
 
     $this->archivistsNotesComponent->processForm();
 
+    $this->preservationNotesComponent->processForm();
+
     return parent::processForm();
   }
 
   /**
-   * Update ISAD notes
+   * Update Nobrade's notes
    *
    * @param QubitInformationObject $informationObject
    */
   protected function updateNotes()
   {
-    // Update archivist's notes (multiple)
+    // Update archivist's notes (multiple) - NOBRADE 7.1
     foreach ((array) $this->request->new_archivist_note as $content)
     {
       if (0 < strlen($content))
@@ -238,7 +246,7 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
       }
     }
 
-    // Update publication notes (multiple)
+    // Update publication notes (multiple) - NOBRADE 5.4
     foreach ((array) $this->request->new_publication_note as $content)
     {
       if (0 < strlen($content))
@@ -252,7 +260,7 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
       }
     }
 
-    // Update general notes (multiple)
+    // Update general notes (multiple) - NOBRADE 6.2
     foreach ((array) $this->request->new_note as $content)
     {
       if (0 < strlen($content))
@@ -263,6 +271,19 @@ class sfNobradePluginEditAction extends InformationObjectEditAction
         $note->userId = $this->context->user->getAttribute('user_id');
 
         $this->resource->notes[] = $note;
+      }
+    }
+    // Update preservation notes (multiple) - NOBRADE 6.1
+    foreach ((array) $this->request->new_preservation_note as $content)
+    {
+      if (0 < strlen($content))
+      {
+          $note = new QubitNote;
+          $note->content = $content;
+          $note->typeId = QubitTerm::PRESERVATION_NOTE_ID;
+          $note->userId = $this->context->user->getAttribute('user_id');
+
+          $this->resource->notes[] = $note;
       }
     }
   }

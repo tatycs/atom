@@ -57,7 +57,7 @@
 <section id="identityArea">
 
   <?php if (check_field_visibility('app_element_visibility_nobrade_identity_area')): ?>
-    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Identity Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'identityArea', 'title' => __('Edit identity area'))) ?>
+    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Identity Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'identityArea', 'title' => __('Edit Identity Area'))) ?>
   <?php endif; ?>
 
   <?php echo render_show(__('Reference Code'), render_value($nobrade->referenceCode), array('fieldLabel' => 'referenceCode')) ?>
@@ -139,7 +139,7 @@
 <section id="conditionsOfAccessAndUseArea">
 
   <?php if (check_field_visibility('app_element_visibility_nobrade_conditions_of_access_use_area')): ?>
-    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Conditions of Access and Use Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'conditionsOfAccessAndUseArea', 'title' => __('Edit conditions of access and use area'))) ?>
+    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Conditions of Access and Use Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'conditionsOfAccessAndUseArea', 'title' => __('Edit Conditions of Access and Use Area'))) ?>
   <?php endif; ?>
 
   <?php echo render_show(__('Conditions Governing Access'), render_value($resource->getAccessConditions(array('cultureFallback' => true))), array('fieldLabel' => 'conditionsGoverningAccess')) ?>
@@ -180,7 +180,7 @@
 <section id="alliedMaterialsArea">
 
   <?php if (check_field_visibility('app_element_visibility_nobrade_allied_materials_area')): ?>
-    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Allied Materials Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'alliedMaterialsArea', 'title' => __('Edit alied materials area'))) ?>
+    <?php echo link_to_if(SecurityPrivileges::editCredentials($sf_user, 'informationObject'), '<h2>'.__('Allied Materials Area').'</h2>', array($resource, 'module' => 'informationobject', 'action' => 'edit'), array('anchor' => 'alliedMaterialsArea', 'title' => __('Edit Alied Materials Area'))) ?>
   <?php endif; ?>
 
   <?php echo render_show(__('Existence and Location of Originals'), render_value($resource->getLocationOfOriginals(array('cultureFallback' => true))), array('fieldLabel' => 'existenceAndLocationOfOriginals')) ?>
@@ -207,6 +207,12 @@
   <?php if (check_field_visibility('app_element_visibility_nobrade_notes')): ?>
     <?php foreach ($resource->getNotesByType(array('noteTypeId' => QubitTerm::GENERAL_NOTE_ID)) as $item): ?>
       <?php echo render_show(__('Note'), render_value($item->getContent(array('cultureFallback' => true))), array('fieldLabel' => 'generalNote')) ?>
+    <?php endforeach; ?>
+  <?php endif; ?>
+
+  <?php if (check_field_visibility('app_element_visibility_nobrade_preservation_notes')): ?>
+    <?php foreach ($resource->getNotesByType(array('noteTypeId' => QubitTerm::PRESERVATION_NOTE_ID)) as $item): ?>
+      <?php echo render_show(__('Preservation Note'), render_value($item->getContent(array('cultureFallback' => true))), array('fieldLabel' => 'preservationNote')) ?>
     <?php endforeach; ?>
   <?php endif; ?>
 

@@ -20,10 +20,11 @@
 /**
  * This class is used to provide methods that supplement the core Qubit
  * information object with behaviour or presentation features that are specific
- * to the ICA's International Standard Archival Description (ISAD)
+ * to the Brazilian's Standard Archival Description - NOBRADE
  *
  * @package    AccesstoMemory
  * @author     Peter Van Garderen <peter@artefactual.com>
+ * @author     Tatiana Canelhas <tatycs@gmail.com>
  */
 
 class sfNobradePlugin implements ArrayAccess
@@ -151,9 +152,13 @@ class sfNobradePlugin implements ArrayAccess
     return call_user_func_array(array($this, '__unset'), $args);
   }
 
-  public static function eventTypes() //canelhas - acrescentar diferentes datas aqui
+  public static function eventTypes() //NOBRADE'S EVENT TYPES
   {
     return array(QubitTerm::getById(QubitTerm::CREATION_ID),
-      QubitTerm::getById(QubitTerm::ACCUMULATION_ID));
+                 QubitTerm::getById(QubitTerm::ACCUMULATION_ID),
+                 QubitTerm::getById(QubitTerm::SUBJECT_DATE_ID),
+                 QubitTerm::getById(QubitTerm::CHRONIC_DATE_ID),
+                 QubitTerm::getById(QubitTerm::INCLUSIVE_DATE_ID),
+                 QubitTerm::getById(QubitTerm::TOPIC_DATE_ID));
   }
 }

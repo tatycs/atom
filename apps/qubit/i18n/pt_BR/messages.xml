@@ -280,7 +280,7 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/term/templates/indexSuccess.php</note>
       </trans-unit>
       <trans-unit id="52f2abc31facf3d1aa0272cd240dad9fb4b3924e">
-        <source>Add New Child Levels</source>
+        <source>Add new child levels</source>
         <target>Adicionar novos n&#xED;veis subordinados</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_childLevels.php</note>
       </trans-unit>
@@ -515,8 +515,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="daa72ca0a8406bd4455723d9050fd4ca728253aa">
-        <source>Archival History</source>
-        <target>Hist&#xF3;ria Arquiv&#xED;stica</target>
+        <source>Archival history</source>
+        <target>Hist&#xF3;ria arquiv&#xED;stica</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/visibleElementsSuccess.php</note>
       </trans-unit>
       <trans-unit id="add9915f36921cbb6871cf73f5ec4a26974d2340">
@@ -955,8 +955,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/settings/templates/dipUploadSuccess.php</note>
       </trans-unit>
       <trans-unit id="eb9a4bc1c0c153e4e4b042a79113b815b7e3021d">
-        <source>Child Date</source>
-        <target>Data do Subordinado</target>
+        <source>Date</source>
+        <target>Datao</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/user/templates/clipboardSuccess.php</note>
       </trans-unit>
       <trans-unit id="14741faac7891439054e60649ebcaf1aa4631034">
@@ -975,7 +975,7 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/physicalobject/templates/boxListSuccess.php</note>
       </trans-unit>
       <trans-unit id="842b7b5d71896a41ecd92997ec80b1df5243c81e">
-        <source>Dates</source>
+        <source>Date</source>
         <target>Datas</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_datesFacet.php</note>
       </trans-unit>
@@ -1311,7 +1311,7 @@
       </trans-unit>
       <trans-unit id="a2bb9d34b8a1a79665858d354585cf147e0dee4e">
         <source>End</source>
-        <target>Fim</target>
+        <target>Final</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/event/actions/editComponent.class.php</note>
       </trans-unit>
       <trans-unit id="89d10cd6c1e1437d6318d6fbb25a40e0aaaddd34">
@@ -1875,13 +1875,13 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_adminInfo.php</note>
       </trans-unit>
       <trans-unit id="7c7f5d049fad2569721d446c4a811f9bd5da5393">
-        <source>Child Level</source>
-        <target>N&#xED;vel do Subordinado</target>
+        <source>Level</source>
+        <target>N&#xED;vel</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/_childLevels.php</note>
       </trans-unit>
       <trans-unit id="8378bfd4ba4a8ae83ce8f2bbcfda8163ef44e076">
-        <source>Child Level of Description</source>
-        <target>N&#xED;vel de descri&#xE7;&#xE3;o do Subordinado</target>
+        <source>Level of Description</source>
+        <target>N&#xED;vel de descri&#xE7;&#xE3;o</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="8fa54be88d46f9d52c82b30c54d96d9ec16ebe3c">
@@ -2715,8 +2715,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/actions/notesComponent.class.php</note>
       </trans-unit>
       <trans-unit id="b2acd6af73c4ceb26f6c5c2b296adafd8ee013d6">
-        <source>Child Reference Code</source>
-        <target>C&#xF3;digo de Refer&#xEA;ncia do Subordinado</target>
+        <source>Identifier</source>
+        <target>Identificador</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/search/templates/_advancedSearch.php</note>
       </trans-unit>
       <trans-unit id="1b71aaeef4ba63eac38b64a29f4f2838bbdee13b">
@@ -3297,7 +3297,7 @@
       </trans-unit>
       <trans-unit id="952f375412e89ff213a8aca383d18e5691354347">
         <source>Start</source>
-        <target>Iniciar</target>
+        <target>Início</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/event/actions/editComponent.class.php</note>
       </trans-unit>
       <trans-unit id="ff99f5b5f7948dfa71fd545b3d99f5f00856ea29">
@@ -3650,8 +3650,8 @@
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/informationobject/templates/itemListSuccess.php</note>
       </trans-unit>
       <trans-unit id="768e0c1c69573fb588f61f1308a015c11468e05f">
-        <source>Child Title</source>
-        <target>T&#xED;tulo do Subordinado</target>
+        <source>Title</source>
+        <target>T&#xED;tulo</target>
         <note>https://github.com/artefactual/atom/blob/master/apps/qubit/modules/staticpage/templates/listSuccess.php</note>
       </trans-unit>
       <trans-unit id="6be3badbbba74654b102c5a1056bacdf926b8570">

@@ -23,6 +23,7 @@
  * @package    AccesstoMemory
  * @subpackage informationObject - initialize a showIsad template for displaying an information object
  * @author     Peter Van Garderen <peter@artefactual.com>
+ * @author     Tatiana Canelhas <tatycs@gmail.com>
  */
 
 class sfNobradePluginIndexAction extends InformationObjectIndexAction
@@ -49,7 +50,7 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
 
     // Set creator history label
     $this->creatorHistoryLabels = array(
-      NULL => $this->context->i18n->__('Administrative / Biographical history'),
+      NULL => $this->context->i18n->__('Administrative / Biographical History'),
       QubitTerm::CORPORATE_BODY_ID => $this->context->i18n->__('Administrative History'),
       QubitTerm::PERSON_ID => $this->context->i18n->__('Biographical History'),
       QubitTerm::FAMILY_ID => $this->context->i18n->__('Biographical History')
@@ -62,7 +63,7 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
 
       $validatorSchema->creators = new QubitValidatorCountable(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('This archival description, or one of its higher levels, %1%requires%2% at least one %3%creator%4%.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#3.2.1">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('This archival description, or one of its higher levels, %1%requires%2% at least one %3%creator%4%.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>'))));
 
       foreach ($this->resource->ancestors->andSelf()->orderBy('rgt') as $item)
       {
@@ -74,27 +75,27 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
       }
 
       $validatorSchema->dateRange = new QubitValidatorDates(array(), array(
-        'invalid' => $this->context->i18n->__('%1%Date(s)%2% - are not consistent with %3%higher levels%2%.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.3">', '%2%' => '</a>', '%3%' => '<a href="%ancestor%">'))));
+        'invalid' => $this->context->i18n->__('%1%Date(s)%2% - are not consistent with %3%higher levels%2%.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="%ancestor%">'))));
       $values['dateRange'] = $this->resource;
 
       $validatorSchema->dates = new QubitValidatorCountable(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Date(s)%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.3">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Date(s)%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>'))));
       $values['dates'] = $this->resource->getDates();
 
       $validatorSchema->extentAndMedium = new sfValidatorString(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Extent and Medium%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.5">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Extent and Medium%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>'))));
       $values['extentAndMedium'] = $this->resource->getExtentAndMedium(array('cultureFallback' => true));
 
       $validatorSchema->identifier = new sfValidatorString(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Identifier%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.1">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Identifier%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>'))));
       $values['identifier'] = $this->resource->identifier;
 
       $this->addField($validatorSchema, 'levelOfDescription');
-      $validatorSchema->levelOfDescription->setMessage('forbidden', $this->context->i18n->__('%1%Level of description%2% - Value "%value%" is not consistent with higher levels.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.4">', '%2%' => '</a>')));
-      $validatorSchema->levelOfDescription->setMessage('required', $this->context->i18n->__('%1%Level of description%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.4">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>')));
+      $validatorSchema->levelOfDescription->setMessage('forbidden', $this->context->i18n->__('%1%Level of description%2% - Value "%value%" is not consistent with higher levels.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>')));
+      $validatorSchema->levelOfDescription->setMessage('required', $this->context->i18n->__('%1%Level of description%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>')));
 
       if (isset($this->resource->levelOfDescription))
       {
@@ -103,7 +104,7 @@ class sfNobradePluginIndexAction extends InformationObjectIndexAction
 
       $validatorSchema->title = new sfValidatorString(array(
         'required' => true), array(
-        'required' => $this->context->i18n->__('%1%Title%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://ica-atom.org/doc/RS-1#3.1.2">', '%2%' => '</a>', '%3%' => '<a href="http://ica-atom.org/doc/RS-1#I.12">', '%4%' => '</a>'))));
+        'required' => $this->context->i18n->__('%1%Title%2% - This is a %3%mandatory%4% element.', array('%1%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%2%' => '</a>', '%3%' => '<a href="http://www.conarq.arquivonacional.gov.br/images/publicacoes_textos/nobrade.pdf">', '%4%' => '</a>'))));
       $values['title'] = $this->resource->getTitle(array('cultureFallback' => true));
 
       try

@@ -33,43 +33,51 @@
 
     <div id="content">
 
+      <!-- IDENTITY AREA -->
       <fieldset class="collapsible collapsed" id="identityArea">
 
         <legend><?php echo __('Identity Area') ?></legend>
 
-        <?php echo render_show(__('Reference Code'), $nobrade->referenceCode) ?>
+        <!-- REFERENCE CODE -->
+        <?php //echo render_show(__('Reference Code'), $nobrade->referenceCode) ?> <!-- There's only one reference code in NOBRADE -->
 
         <?php echo $form->identifier
           ->help(__('Provide a specific local reference code, control number, or other unique identifier. The country and repository code will be automatically added from the linked repository record to form a full reference code. (NOBRADE 1.1)'))
           ->label(__('Reference Code').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>')
           ->renderRow() ?>
 
-        <?php echo get_partial('informationobject/alternativeIdentifiers', $sf_data->getRaw('alternativeIdentifiersComponent')->getVarHolder()->getAll()) ?>
+        <?php //echo get_partial('informationobject/alternativeIdentifiers', $sf_data->getRaw('alternativeIdentifiersComponent')->getVarHolder()->getAll()) ?> <!-- There's only one reference code in NOBRADE -->
 
+        <!-- TITLE -->
         <?php echo render_field($form->title
           ->help(__('Provide either a formal title or a concise supplied title in accordance with the rules of multilevel description and national conventions. (NOBRADE 1.2)'))
           ->label(__('Title').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>'), $resource) ?>
 
-        <?php /*canelhas - date field tag message*/ echo get_partial('event', $sf_data->getRaw('eventComponent')->getVarHolder()->getAll() + array('help' => __('"Identify and record the date(s) of the unit of description. Identify the type of date given. Record as a single date or a range of dates as appropriate.” (NOBRADE 1.3). The Date display field can be used to enter free-text date information, including typographical marks to express approximation, uncertainty, or qualification. Use the start and end fields to make the dates searchable. Do not use any qualifiers or typographical symbols to express uncertainty. Acceptable date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.'))) ?>
+        <!-- DATE(S) -->
+        <?php echo get_partial('event', $sf_data->getRaw('eventComponent')->getVarHolder()->getAll() + array('help' => __('"Identify and record the date(s) of the unit of description. Identify the type of date given. Record as a single date or a range of dates as appropriate.” (NOBRADE 1.3). The Date display field can be used to enter free-text date information, including typographical marks to express approximation, uncertainty, or qualification. Use the start and end fields to make the dates searchable. Do not use any qualifiers or typographical symbols to express uncertainty. Acceptable date formats: YYYYMMDD, YYYY-MM-DD, YYYY-MM, YYYY.'))) ?>
 
+        <!-- LEVEL OF DESCRIPTION -->
         <?php echo $form->levelOfDescription
           ->help(__('Record the level of this unit of description. (NOBRADE 1.4)'))
           ->label(__('Level of Description').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>')
           ->renderRow() ?>
 
-        <?php echo get_partial('informationobject/childLevels', array('help' => __('Identifier: Provide a specific local reference code, control number, or other unique identifier. Level of description: Record the level of this unit of description. Title: Provide either a formal title or a concise supplied title in accordance with the rules of multilevel description and national conventions.'))) ?>
+        <!-- CHILD LEVELS -->
+        <?php echo get_partial('childLevels', array('help' => __('Identifier: Provide a specific local reference code, control number, or other unique identifier. Level of description: Record the level of this unit of description. Title: Provide either a formal title or a concise supplied title in accordance with the rules of multilevel description and national conventions.'))) ?>
 
-
-         <?php echo render_field($form->extentAndMedium
-          ->help(__('Record the extent of the unit of description by giving the number of physical or logical units in arabic numerals and the unit of measurement. Give the specific medium (media) of the unit of description. Separate multiple extents with a linebreak. (NOBRADE 1.5)'))
-          ->label(__('Extent and Medium').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>'), $resource, array('class' => 'resizable')) ?>
+        <!-- EXTENT AND MEDIUM -->
+        <?php echo render_field($form->extentAndMedium
+         ->help(__('Record the extent of the unit of description by giving the number of physical or logical units in arabic numerals and the unit of measurement. Give the specific medium (media) of the unit of description. Separate multiple extents with a linebreak. (NOBRADE 1.5)'))
+         ->label(__('Extent and Medium').' <span class="form-required" title="'.__('This is a mandatory element.').'">*</span>'), $resource, array('class' => 'resizable')) ?>
 
       </fieldset> <!-- /#identityArea -->
 
+      <!-- CONTEXT AREA -->
       <fieldset class="collapsible collapsed" id="contextArea">
 
         <legend><?php echo __('Context Area') ?></legend>
 
+        <!-- NAME OF CREATOR(S) -->
         <div class="form-item">
           <?php echo $form->creators
             ->label(__('Name of Creator(s)').' <span class="form-required" title="'.__('This archival description, or one of its higher levels, requires at least one creator.').'">*</span>')
@@ -82,6 +90,7 @@
           <input class="list" type="hidden" value="<?php echo url_for(array('module' => 'actor', 'action' => 'autocomplete')) ?>"/>
         </div>
 
+        <!-- REPOSITORY -->
         <div class="form-item">
           <?php echo $form->repository->renderLabel() ?>
           <?php echo $form->repository->render(array('class' => 'form-autocomplete')) ?>
@@ -92,86 +101,110 @@
             ->renderHelp(); ?>
         </div>
 
+        <!-- ARCHIVAL HISTORY -->
         <?php echo render_field($form->archivalHistory
+          ->label(__('Archival History'))
           ->help(__('Record the successive transfers of ownership, responsibility and/or custody of the unit of description and indicate those actions, such as history of the arrangement, production of contemporary finding aids, re-use of the records for other purposes or software migrations, that have contributed to its present structure and arrangement. Give the dates of these actions, insofar as they can be ascertained. If the archival history is unknown, record that information. (NOBRADE 2.3)')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- IMMEDIATE SOURCE OF ACQUISITION OR TRANSFER -->
         <?php echo render_field($form->acquisition
           ->help(__('Record the source from which the unit of description was acquired and the date and/or method of acquisition if any or all of this information is not confidential. If the source is unknown, record that information. Optionally, add accession numbers or codes. (NOBRADE 2.4)'))
-          ->label(__('Immediate Source of Acquisition or Transfer')), $resource, array('class' => 'resizable')) ?>
+          ->label(__('Immediate Source of Acquisition or Transfer')) , $resource, array('class' => 'resizable')) ?>
 
       </fieldset> <!-- /#contextArea -->
 
+      <!-- CONTENT AND STRUCTURE AREA -->
       <fieldset class="collapsible collapsed" id="contentAndStructureArea">
 
         <legend><?php echo __('Content and Structure Area') ?></legend>
 
+        <!-- SCOPE AND CONTENT -->
         <?php echo render_field($form->scopeAndContent
-          ->help(__('Give a summary of the scope (such as, time periods, geography) and content, (such as documentary forms, subject matter, administrative processes) of the unit of description, appropriate to the level of description. (NOBRADE 3.1)')), $resource, array('class' => 'resizable')) ?>
+          ->help(__('Give a summary of the scope (such as, time periods, geography) and content, (such as documentary forms, subject matter, administrative processes) of the unit of description, appropriate to the level of description. (NOBRADE 3.1)'))
+          ->label(__('Scope and Content')),$resource, array('class' => 'resizable')) ?>
 
+        <!-- APPRAISAL, DESTRUCTION AND SCHEDULING -->
         <?php echo render_field($form->appraisal
           ->help(__('Record appraisal, destruction and scheduling actions taken on or planned for the unit of description, especially if they may affect the interpretation of the material. (NOBRADE 3.2)'))
           ->label(__('Appraisal, Destruction and Scheduling')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- ACCRUALS -->
         <?php echo render_field($form->accruals
-          ->help(__('Indicate if accruals are expected. Where appropriate, give an estimate of their quantity and frequency. (NOBRADE 3.3)')), $resource, array('class' => 'resizable')) ?>
+          ->help(__('Indicate if accruals are expected. Where appropriate, give an estimate of their quantity and frequency. (NOBRADE 3.3)'))
+          ->label(__('Accruals')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- SYSTEM OF ARRANGEMENT -->
         <?php echo render_field($form->arrangement
           ->help(__('Specify the internal structure, order and/or the system of classification of the unit of description. Note how these have been treated by the archivist. For electronic records, record or reference information on system design. (NOBRADE 3.4)'))
           ->label(__('System of Arrangement')), $resource, array('class' => 'resizable')) ?>
 
       </fieldset> <!-- /#contentAndStructureArea -->
 
+      <!-- CONDITION OF ACCESS AND USE AREA -->
       <fieldset class="collapsible collapsed" id="conditionsOfAccessAndUseArea">
 
         <legend><?php echo __('Conditions of Access and Use Area') ?></legend>
 
+        <!-- CONDITIONS GOVERNING ACCESS -->
         <?php echo render_field($form->accessConditions
           ->help(__('Specify the law or legal status, contract, regulation or policy that affects access to the unit of description. Indicate the extent of the period of closure and the date at which the material will open when appropriate. (NOBRADE 4.1)'))
           ->label(__('Conditions Governing Access')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- CONDITIONS GOVERNING REPRODUCTION -->
         <?php echo render_field($form->reproductionConditions
           ->help(__('Give information about conditions, such as copyright, governing the reproduction of the unit of description after access has been provided. If the existence of such conditions is unknown, record this. If there are no conditions, no statement is necessary. (NOBRADE 4.2)'))
           ->label(__('Conditions Governing Reproduction')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- LANGUAGE OF MATERIAL -->
         <?php echo $form->language
           ->help(__('Record the language(s) of the materials comprising the unit of description. (NOBRADE 4.3)'))
           ->label(__('Language of Material'))
           ->renderRow(array('class' => 'form-autocomplete')) ?>
 
+        <!-- SCRIPT OF MATERIAL -->
         <?php echo $form->script
           ->help(__('Record the script(s) of the materials comprising the unit of description. (NOBRADE 4.3)'))
           ->label(__('Script of Material'))
           ->renderRow(array('class' => 'form-autocomplete')) ?>
 
+        <!-- LANGUAGE AND SCRIPT NOTES OF MATERIAL -->
         <?php echo render_field($form->languageNotes
           ->help(__('Note any distinctive alphabets, scripts, symbol systems or abbreviations employed. (NOBRADE 4.3)'))
-          ->label(__('Language and Script Notes')), $nobrade, array('class' => 'resizable')) ?>
+          ->label(__('Language and Script Notes of Material')), $nobrade, array('class' => 'resizable')) ?>
 
+        <!-- PHYSICAL CHARACTERISTICS -->
         <?php echo render_field($form->physicalCharacteristics
           ->help(__('Indicate any important physical conditions, such as preservation requirements, that affect the use of the unit of description. Note any software and/or hardware required to access the unit of description. (NOBRADE 4.4)'))
           ->label(__('Physical Characteristics and Technical Requirements')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- FINDING AIDS -->
         <?php echo render_field($form->findingAids
-          ->help(__('Give information about any finding aids that the repository or records creator may have that provide information relating to the context and contents of the unit of description. If appropriate, include information on where to obtain a copy. (NOBRADE 4.5)')), $resource, array('class' => 'resizable')) ?>
+          ->help(__('Give information about any finding aids that the repository or records creator may have that provide information relating to the context and contents of the unit of description. If appropriate, include information on where to obtain a copy. (NOBRADE 4.5)'))
+          ->label(__('Fiding Aids')), $resource, array('class' => 'resizable')) ?>
 
       </fieldset> <!-- /#conditionsOfAccessAndUseArea -->
 
+      <!-- ALLIED MATERIAL AREA -->
       <fieldset class="collapsible collapsed" id="alliedMaterialsArea">
 
         <legend><?php echo __('Allied Materials Area') ?></legend>
 
+        <!-- EXISTENCE AND LOCATION OF ORIGINALLS -->
         <?php echo render_field($form->locationOfOriginals
           ->help(__('If the original of the unit of description is available (either in the institution or elsewhere) record its location, together with any significant control numbers. If the originals no longer exist, or their location is unknown, give that information. (NOBRADE 5.1)'))
           ->label(__('Existence and Location of Originals')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- EXISTENCE AND LOCATION OF COPIES -->
         <?php echo render_field($form->locationOfCopies
           ->help(__('If the copy of the unit of description is available (either in the institution or elsewhere) record its location, together with any significant control numbers. (NOBRADE 5.2)'))
           ->label(__('Existence and Location of Copies')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- RELATED UNITS OF DESCRIPTION -->
         <?php echo render_field($form->relatedUnitsOfDescription
           ->help(__('Record information about units of description in the same repository or elsewhere that are related by provenance or other association(s). Use appropriate introductory wording and explain the nature of the relationship . If the related unit of description is a finding aid, use the finding aids element of description (4.5) to make the reference to it. (NOBRADE 5.3)'))
           ->label(__('Related Units of Description')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- RELATED DESCRIPTION -->
         <div class="form-item">
           <?php echo $form->relatedMaterialDescriptions
             ->label(__('Related Descriptions'))
@@ -186,22 +219,30 @@
             ->renderHelp() ?>
         </div>
 
-        <?php echo get_partial('informationobject/notes', $sf_data->getRaw('publicationNotesComponent')->getVarHolder()->getAll()) ?>
+        <!-- PUBLICATION NOTES -->
+        <?php echo get_partial('informationobject/notes',$sf_data->getRaw('publicationNotesComponent')->getVarHolder()->getAll()) ?>
 
       </fieldset> <!-- /#alliedMaterialsArea -->
 
+      <!-- NOTES AREA -->
       <fieldset class="collapsible collapsed" id="notesArea">
 
         <legend><?php echo __('Notes Area') ?></legend>
 
+        <!-- PRESERVATION NOTES -->
+        <?php echo get_partial('informationobject/notes', $sf_data->getRaw('preservationNotesComponent')->getVarHolder()->getAll()) ?>
+
+        <!-- COMPONENT NOTES -->
         <?php echo get_partial('informationobject/notes', $sf_data->getRaw('notesComponent')->getVarHolder()->getAll()) ?>
 
       </fieldset> <!-- /#notesArea -->
 
+      <!-- ACCESS POINTS AREA -->
       <fieldset class="collapsible collapsed" id="accessPointsArea">
 
         <legend><?php echo __('Access Points Area') ?></legend>
 
+        <!-- SUBJECT ACCESS POINTS -->
         <div class="form-item">
           <?php echo $form->subjectAccessPoints
             ->label(__('Subject Access Points'))
@@ -211,8 +252,12 @@
             <input class="add" type="hidden" data-link-existing="true" value="<?php echo url_for(array('module' => 'term', 'action' => 'add', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::SUBJECT_ID), 'module' => 'taxonomy')))) ?> #name"/>
           <?php endif; ?>
           <input class="list" type="hidden" value="<?php echo url_for(array('module' => 'term', 'action' => 'autocomplete', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::SUBJECT_ID), 'module' => 'taxonomy')))) ?>"/>
+          <?php echo $form->subjectAccessPoints
+            ->help(__('When you begin typing in an access point field, the drop-down will provide matching suggestions - select from the list to use an existing term, or enter a new term. (NOBRADE 8.1)'))
+            ->renderHelp() ?>
         </div>
 
+        <!-- PLACE ACCESS POINTS -->
         <div class="form-item">
           <?php echo $form->placeAccessPoints
             ->label(__('Place Access Points'))
@@ -222,8 +267,12 @@
             <input class="add" type="hidden" data-link-existing="true" value="<?php echo url_for(array('module' => 'term', 'action' => 'add', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::PLACE_ID), 'module' => 'taxonomy')))) ?> #name"/>
           <?php endif; ?>
           <input class="list" type="hidden" value="<?php echo url_for(array('module' => 'term', 'action' => 'autocomplete', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::PLACE_ID), 'module' => 'taxonomy')))) ?>"/>
+          <?php echo $form->placeAccessPoints
+            ->help(__('When you begin typing in an access point field, the drop-down will provide matching suggestions - select from the list to use an existing term, or enter a new term. (NOBRADE 8.1)'))
+            ->renderHelp() ?>
         </div>
 
+        <!-- GENRE ACCESS POINTS -->
         <div class="form-item">
           <?php echo $form->genreAccessPoints
             ->label(__('Genre Access Points'))
@@ -233,8 +282,12 @@
             <input class="add" type="hidden" data-link-existing="true" value="<?php echo url_for(array('module' => 'term', 'action' => 'add', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::GENRE_ID), 'module' => 'taxonomy')))) ?> #name"/>
           <?php endif; ?>
           <input class="list" type="hidden" value="<?php echo url_for(array('module' => 'term', 'action' => 'autocomplete', 'taxonomy' => url_for(array(QubitTaxonomy::getById(QubitTaxonomy::GENRE_ID), 'module' => 'taxonomy')))) ?>"/>
+          <?php echo $form->genreAccessPoints
+            ->help(__('When you begin typing in an access point field, the drop-down will provide matching suggestions - select from the list to use an existing term, or enter a new term. (NOBRADE 8.1)'))
+            ->renderHelp() ?>
         </div>
 
+        <!-- NAME ACCESS POINTS -->
         <div class="form-item">
           <?php echo $form->nameAccessPoints
             ->label(__('Name Access Points (Subjects)'))
@@ -244,61 +297,77 @@
             <input class="add" type="hidden" data-link-existing="true" value="<?php echo url_for(array('module' => 'actor', 'action' => 'add')) ?> #authorizedFormOfName"/>
           <?php endif; ?>
           <input class="list" type="hidden" value="<?php echo url_for(array('module' => 'actor', 'action' => 'autocomplete', 'showOnlyActors' => 'true')) ?>"/>
+          <?php echo $form->nameAccessPoints
+            ->help(__('When you begin typing in an access point field, the drop-down will provide matching suggestions - select from the list to use an existing term, or enter a new term. (NOBRADE 8.1)'))
+            ->renderHelp() ?>
         </div>
 
-      </fieldset>
+      </fieldset><!-- /#accessPointsArea -->
 
+      <!-- DESCRIPTION CONTROL AREA -->
       <fieldset class="collapsible collapsed" id="descriptionControlArea">
 
         <legend><?php echo __('Description Control Area') ?></legend>
 
+        <!-- DESCRIPTION IDENTIFIER -->
         <?php echo $form->descriptionIdentifier
           ->help(__('Record a unique description identifier in accordance with local and/or national conventions. If the description is to be used internationally, record the code of the country in which the description was created in accordance with the latest version of ISO 3166 - Codes for the representation of names of countries. Where the creator of the description is an international organisation, give the organisational identifier in place of the country code.'))
           ->label(__('Description Identifier'))
           ->renderRow() ?>
 
+        <!-- INSTITUTION IDENTIFIER -->
         <?php echo render_field($form->institutionResponsibleIdentifier
           ->help(__('Record the full authorised form of name(s) of the agency(ies) responsible for creating, modifying or disseminating the description or, alternatively, record a code for the agency in accordance with the national or international agency code standard.'))
           ->label(__('Institution Identifier')), $resource) ?>
 
+        <!-- RULES OR CONVENTIONS -->
         <?php echo render_field($form->rules
           ->help(__('Record the international, national and/or local rules or conventions followed in preparing the description. (NOBRADE 7.2)'))
           ->label(__('Rules or Conventions')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- DESCRIPTION STATUS -->
         <?php echo $form->descriptionStatus
           ->label(__('Status'))
           ->help(__('Record the current status of the description, indicating whether it is a draft, finalized and/or revised or deleted.'))
           ->renderRow() ?>
 
+        <!-- LEVEL OF DETAIL -->
         <?php echo $form->descriptionDetail
           ->help(__('Record whether the description consists of a minimal, partial or full level of detail in accordance with relevant international and/or national guidelines and/or rules.'))
           ->label(__('Level of Detail'))
           ->renderRow() ?>
 
+         <!-- DATES OD CREATION, REVISION AND DELETION -->
         <?php echo render_field($form->revisionHistory
           ->help(__('Record the date(s) the entry was prepared and/or revised. (NOBRADE 7.3)'))
           ->label(__('Dates of Creation, Revision and Deletion')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- LANGUAGE OF DESCRIPTION -->
         <?php echo $form->languageOfDescription
           ->help(__('Indicate the language(s) used to create the description of the archival material.'))
           ->label(__('Language(s)'))->renderRow(array('class' => 'form-autocomplete')) ?>
 
+        <!-- SCRIPT OF DESCRIPTION -->
         <?php echo $form->scriptOfDescription
           ->help(__('Indicate the script(s) used to create the description of the archival material.'))
           ->label(__('Script(s)'))->renderRow(array('class' => 'form-autocomplete')) ?>
 
+        <!-- SOURCES -->
         <?php echo render_field($form->sources
           ->help(__('Record citations for any external sources used in the archival description (such as the Scope and Content, Archival History, or Notes fields).'))
           ->label(__('Sources')), $resource, array('class' => 'resizable')) ?>
 
+        <!-- ARCHIVIST'S NOTES -->
         <?php echo get_partial('informationobject/notes', $sf_data->getRaw('archivistsNotesComponent')->getVarHolder()->getAll()) ?>
 
       </fieldset> <!-- /#descriptionControlArea -->
 
+      <!-- ADMININSTRATION AREA -->
       <?php echo get_partial('informationobject/adminInfo', array('form' => $form, 'resource' => $resource)) ?>
 
     </div>
 
+    <!-- CANCEL/SAVE BUTTONS -->
     <?php echo get_partial('informationobject/editActions', array('resource' => ($parent !== null ? $parent : $resource))) ?>
 
   </form>

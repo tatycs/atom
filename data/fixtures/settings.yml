@@ -915,7 +915,10 @@ QubitSetting:
     name: nobrade_archival_history
     scope: element_visibility
     value: 1
-
+  Qubit_Settings_visibleElements_NobradePreservationNotes:
+    name: nobrade_preservation_notes
+    scope: element_visibility
+    value: 1
   Qubit_Settings_visibleElements_RadGeneralNotes:
     name: rad_general_notes
     scope: element_visibility
